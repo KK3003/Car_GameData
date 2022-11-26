@@ -27,7 +27,7 @@ public class AudioCtrl : MonoBehaviour
             
         }
 
-       if(DataCtrl.instance.data.playMusic)
+       if(GameDataSO.instance.gameData.playMusic)
         {
             BGMusic.SetActive(true);
 
@@ -50,13 +50,13 @@ public class AudioCtrl : MonoBehaviour
 
     public void ToggleMusic()
     {
-        if(DataCtrl.instance.data.playMusic)
+        if(GameDataSO.instance.gameData.playMusic)
         {
             BGMusic.SetActive(false);
 
             btnMusic.GetComponent<Image>().sprite = imgMusicOff;
 
-            DataCtrl.instance.data.playMusic = false;
+            GameDataSO.instance.gameData.playMusic = false;
 
         }
         else
@@ -65,7 +65,7 @@ public class AudioCtrl : MonoBehaviour
 
             btnMusic.GetComponent<Image>().sprite = imgMusicOn;
 
-            DataCtrl.instance.data.playMusic = true;
+            GameDataSO.instance.gameData.playMusic = true;
         }
     }
 

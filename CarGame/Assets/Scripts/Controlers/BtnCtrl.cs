@@ -47,8 +47,8 @@ public class BtnCtrl : MonoBehaviour
     void BtnStatus()
     {
         // getting the lock status and no. of stars
-        bool unlocked = DataCtrl.instance.isUnlocked(levelNumber);
-        int starsAwarded = DataCtrl.instance.getStars(levelNumber);
+        bool unlocked = GameDataSO.instance.gameData.levelData[levelNumber].isUnlocked;
+        int starsAwarded = GameDataSO.instance.gameData.levelData[levelNumber].starsAwarded;
 
         if(unlocked)
         {

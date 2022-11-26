@@ -30,7 +30,8 @@ public class LevelCompleteCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        data = DataCtrl.instance.data;
+        // data = DataCtrl.instance.data;
+        data = GameDataSO.instance.gameData;
         // enable when deploying and beta testing
         // score = GameCtrl.instance.GetScore();
         datascore = data.coinCount;

@@ -22,6 +22,6 @@ public class SceneChanger : MonoBehaviour
 
     public void  setLives3()
     {
-        DataCtrl.instance.data.lives = 3;
+        GameDataSO.instance.gameData.lives = 3;
     }
 }

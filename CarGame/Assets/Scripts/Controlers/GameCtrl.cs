@@ -50,8 +50,9 @@ public class GameCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DataCtrl.instance.RefreshData();
-        data = DataCtrl.instance.data;
+        // DataCtrl.instance.RefreshData();
+        // data = DataCtrl.instance.data;
+        data = GameDataSO.instance.gameData;
         RefreshUI();
 
         // LevelComplete();
@@ -113,7 +114,7 @@ public class GameCtrl : MonoBehaviour
     private void OnDisable()
     {
         Debug.Log("Data Saved");
-        DataCtrl.instance.SaveData(data);
+      //  DataCtrl.instance.SaveData(data);
 
         Time.timeScale = 1;
 
@@ -146,7 +147,7 @@ public class GameCtrl : MonoBehaviour
         if((levelNumber+1) <= data.levelData.Length-1)
         {
             data.levelData[levelNumber+1].isUnlocked = true;
-            DataCtrl.instance.SaveData(data);
+          //  DataCtrl.instance.SaveData(data);
         }
         //data.levelData[levelNumber].isUnlocked = true;
     }
@@ -280,14 +281,14 @@ public class GameCtrl : MonoBehaviour
         if(data.lives == 0)
         {
             data.lives = 3;
-            DataCtrl.instance.SaveData(data);
+          //  DataCtrl.instance.SaveData(data);
             Invoke("GameOver", restartDelay);
         }
         else
         {
           
 
-            DataCtrl.instance.SaveData(data);
+           // DataCtrl.instance.SaveData(data);
             Invoke("RestartLevel", restartDelay);
         }
        
